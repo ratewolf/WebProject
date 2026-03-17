@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poly News</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Georgia", "Times New Roman", serif;
+            background-color: #f4f1ea;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: #111;
+            color: white;
+            padding: 24px 16px;
+            text-align: center;
+            border-bottom: 4px solid #b22222;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            padding: 12px 16px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        nav li {
+            font-weight: bold;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+
+        aside {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #d7d1c7;
+            align-self: start;
+        }
+
+        aside h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #b22222;
+            padding-bottom: 8px;
+        }
+
+        aside section + section {
+            margin-top: 24px;
+        }
+
+        aside ul {
+            padding-left: 18px;
+            margin: 12px 0 0;
+        }
+
+        main {
+            display: grid;
+            gap: 24px;
+        }
+
+        article,
+        section {
+            background-color: #fff;
+            border: 1px solid #d7d1c7;
+            padding: 24px;
+        }
+
+        article header {
+            background: none;
+            color: inherit;
+            border: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        article header h2 {
+            margin: 0 0 8px;
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+
+        article header p {
+            margin: 0 0 16px;
+            color: #666;
+        }
+
+        figure {
+            margin: 0 0 16px;
+        }
+
+        figure img {
+            width: 100%;
+            display: block;
+            border: 1px solid #ccc;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .highlight {
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-left: 4px solid #b22222;
+            padding-left: 12px;
+            margin: 16px 0;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .news-card {
+            border: 1px solid #ddd;
+            padding: 16px;
+            background-color: #faf8f4;
+        }
+
+        .news-card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .news-card time {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .newsletter-form {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px dashed #bbb;
+        }
+
+        .newsletter-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .newsletter-form input,
+        .newsletter-form select,
+        .newsletter-form button,
+        .newsletter-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #bbb;
+            font: inherit;
+            background-color: white;
+        }
+
+        .newsletter-form button {
+            background-color: #111;
+            color: white;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #b22222;
+        }
+
+        footer {
+            margin-top: 32px;
+            background-color: #111;
+            color: #eee;
+            padding: 24px 16px;
+        }
+
+        footer .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer address {
+            font-style: normal;
+            margin-top: 8px;
+            color: #ccc;
+        }
+
+        @media (max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            article header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <header>
+        <h1>Poly News</h1>
+        <p>시맨틱 태그로 구성한 데모 온라인 신문 페이지</p>
+    </header>
+
+    <nav aria-label="주요 메뉴">
+        <ul>
+            <li><a href="#top-news">헤드라인</a></li>
+            <li><a href="#latest-news">최신 뉴스</a></li>
+            <li><a href="#culture">문화</a></li>
+            <li><a href="#tech">기술</a></li>
+            <li><a href="#subscribe">구독</a></li>
+        </ul>
+    </nav>
+
+    <div class="layout">
+        <aside>
+            <section aria-labelledby="popular-title">
+                <h2 id="popular-title">인기 기사</h2>
+                <ul>
+                    <li><a href="#">도심 속 작은 서점이 다시 주목받는 이유</a></li>
+                    <li><a href="#">주 4일제 실험, 실제 만족도는 어땠을까</a></li>
+                    <li><a href="#">브라우저만으로 만드는 나만의 웹 페이지</a></li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="weather-title">
+                <h2 id="weather-title">오늘의 정보</h2>
+                <p><strong>날씨</strong>: 맑음, 18°C</p>
+                <p><strong>환율</strong>: 1 USD = 1,320 KRW</p>
+                <p><strong>업데이트</strong>: <time datetime="2026-03-17">2026년 3월 17일</time></p>
+            </section>
+
+            <section id="subscribe" class="newsletter-form" aria-labelledby="subscribe-title">
+                <h2 id="subscribe-title">뉴스레터 신청</h2>
+                <form>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="홍길동">
+
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+
+                    <label for="category">관심 분야</label>
+                    <select id="category" name="category">
+                        <option>종합</option>
+                        <option>정치</option>
+                        <option>경제</option>
+                        <option>기술</option>
+                        <option>문화</option>
+                    </select>
+
+                    <label for="message">남기고 싶은 말</label>
+                    <textarea id="message" name="message" rows="4" placeholder="의견을 남겨 주세요"></textarea>
+
+                    <button type="submit">구독 신청</button>
+                </form>
+            </section>
+        </aside>
+
+        <main>
+            <article id="top-news">
+                <header>
+                    <h2>“단순한 구조가 더 강하다” — 시맨틱 HTML의 재발견</h2>
+                    <p>
+                        <time datetime="2026-03-17">2026년 3월 17일</time> |
+                        웹개발부 기자 김폴리
+                    </p>
+                </header>
+
+                <figure>
+                    <img
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                        alt="노트북 화면에 코드가 표시된 작업 환경">
+                    <figcaption>
+                        기사 작성, 이미지, 캡션을 하나로 묶는 데에는 figure와 figcaption이 유용하다.
+                    </figcaption>
+                </figure>
+
+                <p class="highlight">
+                    header, nav, aside, main, article, section, footer 같은 태그만 잘 써도
+                    문서 구조가 훨씬 또렷해진다.
+                </p>
+
+                <p>
+                    많은 초보 개발자들이 처음 웹 페이지를 만들 때 <code>div</code>만으로 화면을 구성하곤 한다.
+                    물론 그것도 가능하지만, 페이지의 의미를 더 잘 드러내고 접근성을 높이기 위해서는
+                    시맨틱 태그를 적절히 활용하는 것이 좋다.
+                </p>
+
+                <p>
+                    예를 들어 <strong>header</strong>는 페이지의 머리말,
+                    <strong>nav</strong>는 메뉴,
+                    <strong>main</strong>은 핵심 콘텐츠,
+                    <strong>aside</strong>는 부가 정보,
+                    <strong>footer</strong>는 사이트의 마무리 정보를 담는 데 적합하다.
+                    검색 엔진과 보조 기술도 이런 구조를 더 쉽게 이해할 수 있다.
+                </p>
+
+                <p>
+                    특히 기사 단위의 콘텐츠는 <strong>article</strong>,
+                    그 안의 관련 묶음은 <strong>section</strong>으로 정리하면
+                    유지보수와 확장성 면에서 큰 장점이 있다.
+                    신문사 스타일 페이지는 이런 태그를 연습하기에 꽤 좋은 예제다.
+                </p>
+            </article>
+
+            <section id="latest-news" aria-labelledby="latest-title">
+                <h2 id="latest-title">최신 기사</h2>
+                <div class="news-grid">
+                    <article class="news-card" id="culture">
+                        <header>
+                            <h3><a href="#">지역 영화제가 다시 관객을 모으는 방법</a></h3>
+                            <time datetime="2026-03-16">2026.03.16</time>
+                        </header>
+                        <p>
+                            소규모 상영관과 독립 감독의 협업이 늘어나면서
+                            지역 기반 문화 행사가 다시 활기를 띠고 있다.
+                        </p>
+                    </article>
+
+                    <article class="news-card" id="tech">
+                        <header>
+                            <h3><a href="#">CSS 프레임워크 없이도 충분히 아름다운 페이지 만들기</a></h3>
+                            <time datetime="2026-03-15">2026.03.15</time>
+                        </header>
+                        <p>
+                            기본 CSS만으로도 타이포그래피, 여백, 레이아웃을 잘 다듬으면
+                            완성도 높은 화면 구성이 가능하다.
+                        </p>
+                    </article>
+
+                    <article class="news-card">
+                        <header>
+                            <h3><a href="#">접근성을 고려한 폼 구성, 어디서부터 시작할까</a></h3>
+                            <time datetime="2026-03-14">2026.03.14</time>
+                        </header>
+                        <p>
+                            label 연결, 적절한 input 타입, 명확한 버튼 텍스트는
+                            작은 차이 같지만 사용자 경험에 큰 영향을 준다.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <p><strong>Poly News</strong> | Semantic HTML Practice Page</p>
+            <address>
+                서울시 웹표준구 마크업로 101<br>
+                문의: editor@polynews.example
+            </address>
+            <p>&copy; 2026 Poly News. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
