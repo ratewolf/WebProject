@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 form example</title>
+    <style>
+        .form-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .form-row label,
+        .form-row span {
+            width: 100px;
+        }
+
+        .form-row input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>회원가입</legend>
+
+            <div class="form-row">
+            <label for="name">성명</label>
+            <input type="text" id="name">
+            </div>
+
+            <div class="form-row">
+            <label for="email">이메일</label>
+            <input type="email" id="email">
+            </div>
+
+            <div class="form-row">
+            <label for="addr">주소</label>
+            <input type="text" id="addr">
+            </div>
+
+            <div class="form-row">
+            <span>성별</span>
+            <div>
+                <input type="radio" name="gender">남성
+                <input type="radio" name="gender">여성
+            </div>
+            </div>
+
+            <div class="form-row">
+            <span>취미</span>
+            <div>
+                <input type="checkbox">독서
+                <input type="checkbox">음악
+                <input type="checkbox">스포츠
+            </div>
+            </div>
+
+            <div class="form-row">
+            <button type="submit">가입하기</button>
+            <button type="reset">초기화</button>
+            </div>
+
+        </fieldset>
+    </form>
+</body>
+</html>
