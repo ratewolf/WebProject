@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Media Tags</title>
+</head>
+<body>
+    <!-- https://placehold.co/400X300 -->
+
+    <audio src="media/Kalimba.mp3" controls="controls" loop="2"></audio><br><br>
+
+    <audio controls="controls">
+        <source src="media/Kalimba.mp3" type="audio/mp3">
+        <source src="media/Kalimba.ogg" type="audio/ogg">
+    </audio><br><br>
+
+    <video src="media/Wildlife.mp4" controls="controls" width="400" height="300" poster="https://placehold.co/400X300"></video><br><br>
+
+    <!-- 상대 경로(현재 문서를 기준으로 출력할 파일의 위치를 지정하는 것)로 이미지 파일 설정 -->
+    <img src="media/timetable.png" alt="Polytech Time Table" width="400" height="300"><br><br>
+
+    <!-- 잘못된 예시 -->
+    <img src="timetable.png" alt="Polytech Time Table"><br><br>
+
+    <!-- 원격 주소로 이미지 파일 설정 -->
+    <img src="https://designcompass.org/wp-content/uploads/2024/10/logo-naver-1320x990.png" alt="NAVER" width="400" height="300">
+</body>
+</html>
