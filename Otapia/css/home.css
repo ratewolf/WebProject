@@ -46,13 +46,13 @@ img {
     display: block;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
     margin-top: 0;
 }
 
+/* ==============================
+   Skip Link (Accessibility)
+   ============================== */
 .skip-link {
     position: absolute;
     left: 16px;
@@ -69,6 +69,9 @@ p {
     top: 16px;
 }
 
+/* ==============================
+   Layout Containers
+   ============================== */
 .site-header {
     padding: 26px 0 20px;
 }
@@ -81,51 +84,51 @@ main,
     margin-inline: auto;
 }
 
-/* Header */
+/* ==============================
+   Header (Topbar)
+   ============================== */
 .topbar {
     display: grid;
-    grid-template-columns: auto minmax(280px, 520px) auto;
+    grid-template-columns: 1fr minmax(280px, 520px) 1fr;
     align-items: center;
-    gap: 22px;
+    gap: 24px;
+    width: min(100% - 40px, 1180px);
 }
 
 .brand {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-self: start; /* Grid 영역 안에서 내용물 크기만큼만 차지 */
     gap: 12px;
-    text-decoration: none;
-    width: 158px;           
-    height: 76px;
+    padding: 8px 24px 8px 12px; /* 여백을 통해 크기 유지 */
+    height: 72px;
     background: linear-gradient(135deg, #fff, rgba(127, 255, 212, 0.7));
     border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: var(--shadow);
-    overflow: hidden;
+    text-decoration: none;
 }
 
 .brand img {
     width: 44px;
     height: 44px;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
 .brand-name {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     color: var(--navy);
     letter-spacing: -0.5px;
-    font-family: "Pretendard", sans-serif;
 }
 
-.brand img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-}
-
+/* Search Form */
 .search-form {
     display: flex;
     align-items: center;
+    justify-self: center; /* 가운데 정렬 */
+    width: 100%;
     gap: 8px;
     padding: 8px;
     border: 1px solid var(--line);
@@ -153,6 +156,7 @@ main,
     font: inherit;
 }
 
+/* Buttons */
 .search-form button,
 .button {
     display: inline-flex;
@@ -180,9 +184,11 @@ main,
     background: rgba(255, 255, 255, 0.12);
 }
 
+/* Auth Menu & Lists Reset */
 .auth-menu,
 .main-nav ul,
-.info-list {
+.info-list,
+.rank-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -190,6 +196,7 @@ main,
 
 .auth-menu {
     display: flex;
+    justify-content: flex-end;
     gap: 10px;
 }
 
@@ -202,7 +209,9 @@ main,
     font-weight: 800;
 }
 
-/* Navigation */
+/* ==============================
+   Navigation
+   ============================== */
 .main-nav {
     position: sticky;
     top: 0;
@@ -231,7 +240,9 @@ main,
     background: rgba(127, 255, 212, 0.3);
 }
 
-/* Main spacing: no overlapping, no negative margins */
+/* ==============================
+   Main Content Area
+   ============================== */
 main {
     display: block;
     padding: 34px 0 58px;
@@ -251,7 +262,9 @@ main > * + * {
     box-shadow: var(--shadow);
 }
 
-/* Hero */
+/* ==============================
+   Hero Section
+   ============================== */
 .hero {
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
@@ -345,7 +358,9 @@ main > * + * {
     color: rgba(255, 255, 255, 0.84);
 }
 
-/* Content */
+/* ==============================
+   Layout Content Layout
+   ============================== */
 .content-layout {
     display: grid;
     grid-template-columns: 300px minmax(0, 1fr);
@@ -353,6 +368,7 @@ main > * + * {
     align-items: start;
 }
 
+/* Sidebar */
 .sidebar {
     position: sticky;
     top: 88px;
@@ -378,8 +394,8 @@ main > * + * {
 }
 
 .rank-list {
-    margin: 0;
     padding-left: 1.3rem;
+    list-style: decimal;
 }
 
 .rank-list li + li {
@@ -408,6 +424,7 @@ main > * + * {
     font-size: 0.92rem;
 }
 
+/* Main Column */
 .main-column {
     display: grid;
     gap: 24px;
@@ -442,7 +459,7 @@ main > * + * {
     font-weight: 900;
 }
 
-/* Video: fixed ratio so it never covers other sections */
+/* Video Frame */
 .video-frame {
     display: block;
     width: 100%;
@@ -460,7 +477,9 @@ main > * + * {
     border: 0;
 }
 
-/* Cards */
+/* ==============================
+   Tournament Cards
+   ============================== */
 .tournament-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -536,7 +555,9 @@ main > * + * {
     background: linear-gradient(180deg, #fff 0%, #f6f4ff 100%);
 }
 
-/* Footer */
+/* ==============================
+   Footer
+   ============================== */
 .site-footer {
     border-top: 1px solid var(--line);
     background: #12162b;
@@ -563,22 +584,22 @@ main > * + * {
     color: #fff;
 }
 
-/* Responsive */
+/* ==============================
+   Responsive (Media Queries)
+   ============================== */
 @media (max-width: 980px) {
     .topbar {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 모바일/태블릿에서는 1열로 세로 배치 */
+        justify-items: center;
     }
 
-    .brand {
+    .brand, .search-form, .auth-menu {
         justify-self: center;
     }
 
     .search-form,
     .auth-menu {
         width: 100%;
-    }
-
-    .auth-menu {
         justify-content: center;
     }
 
@@ -608,20 +629,13 @@ main > * + * {
     .site-header {
         padding-top: 18px;
     }
-
+    
     .brand {
-        width: 60px;
-        height: 60px;
-        border-radius: 18px;
+        padding: 8px 16px; /* 모바일용 여백 축소 */
     }
 
     .brand-name {
-        font-size: 20px;
-    }
-
-    .brand img {
-        width: 44px;
-        height: 44px;
+        font-size: 18px;
     }
 
     .search-form {
