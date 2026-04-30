@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Otapia - 로그인</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+    <header class="site-header">
+        <div class="topbar">
+            <a class="brand" href="home.html">
+                <img src="../assets/image/favicon.png" alt="Otapia 아이콘">
+                <span class="brand-name">Otapia</span>
+            </a>
+            <form class="search-form" action="db.html">
+                <label for="search">검색</label>
+                <input id="search" type="search" placeholder="작품, 캐릭터, 태그 검색...">
+                <button>검색</button>
+            </form>
+            
+            <ul class="auth-menu">
+                <li><a href="register.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="db.html">작품/캐릭터</a></li>
+            <li><a href="worldcup.html">이상형 월드컵</a></li>
+            <li><a href="#">통계</a></li>
+            <li><a href="notice.html">공지사항</a></li>
+        </ul>
+    </nav>
+    <main id="main-content">
+        <section class="page-hero">
+            <p class="eyebrow">Account</p>
+            <h1>로그인</h1>
+            <p>Otapia 계정으로 작품 DB와 이상형 월드컵 기록을 이어서 이용하는 화면입니다.</p>
+        </section>
+        <div class="page-grid">
+            <section class="form-card">
+                <form class="form-stack" action="#" method="post">
+                    <label class="field">이메일<input type="email" placeholder="otapia@example.com" required></label>
+                    <label class="field">비밀번호<input type="password" placeholder="비밀번호 입력" required></label>
+                    <label class="checkbox-row"><input type="checkbox"><span>로그인 상태 유지</span></label>
+                    <button class="button primary" type="submit">로그인</button>
+                    <p class="form-help">아직 계정이 없다면 <a class="text-link" href="register.html">회원가입</a>으로 이동하세요.</p>
+                </form>
+            </section>
+            
+            <aside class="tool-card">
+                <h2>로그인 후 이용 가능</h2>
+                <ul class="info-list">
+                    <li><strong>월드컵 기록</strong><span>선택 이력과 우승 결과 저장</span></li>
+                    <li><strong>즐겨찾기</strong><span>작품·캐릭터 북마크</span></li>
+                    <li><strong>건의 작성</strong><span>DB 수정 요청 제출</span></li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p><strong>Otapia</strong> | 덕후의, 덕후에 의한, 덕후를 위한 사이트</p>
+            <address>
+                서울특별시 용산구 보광로 73<br>
+                문의: <a href="mailto:wwgs2005@gmail.com">wwgs2005@gmail.com</a>
+            </address>
+            <p>&copy; 2026 Otapia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

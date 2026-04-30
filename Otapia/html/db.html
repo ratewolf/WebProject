@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Otapia - 작품 정보 DB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+    <header class="site-header">
+        <div class="topbar">
+            <a class="brand" href="home.html">
+                <img src="../assets/image/favicon.png" alt="Otapia 아이콘">
+                <span class="brand-name">Otapia</span>
+            </a>
+            <form class="search-form" action="db.html">
+                <label for="search">검색</label>
+                <input id="search" type="search" placeholder="작품, 캐릭터, 태그 검색...">
+                <button>검색</button>
+            </form>
+            <ul class="auth-menu">
+                <li><a href="register.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <ul>
+            <li><a href="db.html">작품/캐릭터</a></li>
+            <li><a href="worldcup.html">이상형 월드컵</a></li>
+            <li><a href="#">통계</a></li>
+            <li><a href="notice.html">공지사항</a></li>
+        </ul>
+    </nav>
+    
+    <main id="main-content">
+        <section class="page-hero">
+            <p class="eyebrow">Database</p>
+            <h1>작품 정보 DB</h1>
+            <p>애니메이션, 만화, 라이트 노벨, 게임 정보를 태그와 조건으로 탐색하는 정적 DB 목록 화면입니다.</p>
+        </section>
+        <div class="page-grid">
+            <section>
+                <div class="form-card" style="margin-bottom:24px;">
+                    <form class="filter-box" action="#">
+                        <label class="field">DB 검색<input type="search" placeholder="작품명, 캐릭터, 태그 검색"></label>
+                        <div class="inline-row">
+                            <select class="field">
+                                <option>전체 분류</option>
+                                <option>애니메이션</option>
+                                <option>라이트 노벨</option>
+                                <option>게임</option>
+                            </select>
+                            <select class="field">
+                                <option>전체 연도</option>
+                                <option>2026</option>
+                                <option>2025</option>
+                            </select>
+                            <button class="button primary">검색</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="db-grid">
+                    <article class="db-card">
+                        <div class="poster">
+
+                        </div>
+                        <div class="db-card-body">
+                            <span class="tag">Animation</span>
+                            <h3><a href="#">장송의 프리렌</a></h3>
+                            <p class="db-meta">2026 · 판타지 · 10화</p>
+                            <p class="muted">마왕을 쓰러뜨린 용사 일행의 후일담 판타지.</p>
+                        </div>
+                    </article>
+                    <article class="db-card">
+                        <div class="poster purple">
+
+                        </div>
+                        <div class="db-card-body">
+                            <span class="tag">Game</span>
+                            <h3><a href="#">블루 아카이브</a></h3>
+                            <p class="db-meta">수집형 RPG · 학원 · 캐릭터</p>
+                            <p class="muted">학생 캐릭터 중심의 서브컬처 게임.</p>
+                        </div>
+                    </article>
+                    <article class="db-card">
+                        <div class="poster pink">
+
+                        </div>
+                        <div class="db-card-body">
+                            <span class="tag">Light Novel</span>
+                            <h3><a href="#">반쪽 달이 떠오르는 하늘</a></h3>
+                            <p class="db-meta">라이트 노벨 · 연애</p>
+                            <p class="muted">언젠가는 끝날 수밖에 없는 일상과 행복의 의미를 그리는 연애소설.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <aside class="tool-card">
+                <h2>인기 태그</h2>
+                <div class="tag-cloud">
+                    <a class="tag">#연애</a>
+                    <a class="tag">#판타지</a>
+                    <a class="tag">#학원</a>
+                    <a class="tag">#만화원작</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p><strong>Otapia</strong> | 덕후의, 덕후에 의한, 덕후를 위한 사이트</p>
+            <address>
+                서울특별시 용산구 보광로 73<br>
+                문의: <a href="mailto:wwgs2005@gmail.com">wwgs2005@gmail.com</a>
+            </address>
+            <p>&copy; 2026 Otapia. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
