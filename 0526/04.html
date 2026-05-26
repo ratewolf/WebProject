@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반환값이 있는 선언적 함수</title>
+    <script>
+        function power(x, y) {
+            return x ** y;
+        }
+
+        function powerOfFor(x, y) {
+            let result = 1
+            for(let i = 1; i <= y; i++) {
+                result *= x;
+            }
+            return result;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="alert(Math.pow(7, 4))">Math.pow의 제곱승 계산결과</button>
+    <button onclick="alert(power(7, 4))">제곱승 계산결과</button>
+    <button onclick="alert(powerOfFor(7, 4))">제곱승 계산결과2</button>
+</body>
+</html>
