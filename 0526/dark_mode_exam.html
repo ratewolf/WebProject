@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드 예제</title>
+    <script>
+        let screenMode = 1;
+
+        function changeColor() {
+            if (screenMode == 0) {
+                document.querySelector("body").style.backgroundColor = "black";
+                document.querySelector("h1").style.backgroundColor = "#00FFFF";
+                document.querySelector("h1").style.color = "white";
+                screenMode = 1;
+            }
+            else {
+                document.querySelector("body").style.backgroundColor = "white";
+                document.querySelector("h1").style.backgroundColor = "#FF0000";
+                document.querySelector("h1").style.color = "black";
+                screenMode = 0;
+            }
+        }
+
+        window.onload = function() {
+            document.querySelector("body").style.backgroundColor = "white";
+            document.querySelector("h1").style.backgroundColor = "#FF0000";
+            document.querySelector("h1").style.color = "black";
+        };
+    </script>
+</head>
+<body>
+    <h1>DOM(Document Object Model)</h1>
+    <button onclick="changeColor()">화면 모드 전환</button>
+</body>
+</html>
