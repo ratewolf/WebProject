@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 객체 속성 조작</title>
+    <script>
+        let imgIndex = 0;
+
+        window.onload = function() {
+            let img1 = document.getElementById("img1");
+            img1.src = "./imgs/background.jpg";
+            img1.width = 300;
+            img1.height = 200;
+        }
+
+        function changeImage(btn) {
+            // if (img1.getAttribute('src') == "./imgs/background.jpg") {
+            //     img1.src = "./imgs/sunflower.png";
+            //     btn.innerText = "배경 이미지로 변경";
+            // }
+            // else {
+            //     img1.src = "./imgs/background.jpg";
+            //     btn.innerText = "꽃 이미지로 변경";
+            // }
+
+            // if (imgIndex == 0) {
+            //     img1.src = "./imgs/sunflower.png";
+            //     btn.innerText = "배경 이미지로 변경";
+            //     imgIndex = 1;
+            // }
+            // else {
+            //     img1.src = "./imgs/background.jpg";
+            //     btn.innerText = "꽃 이미지로 변경";
+            //     imgIndex = 0;
+            // }
+
+            if (btn.innerText === "꽃 이미지로 변경") {
+                img1.src = "./imgs/sunflower.png";
+                btn.innerText = "배경 이미지로 변경";
+            }
+            else {
+                img1.src = "./imgs/background.jpg";
+                btn.innerText = "꽃 이미지로 변경";
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="img1">
+    <br>
+    <button onclick="changeImage(this)">꽃 이미지로 변경</button>
+</body>
+</html>
