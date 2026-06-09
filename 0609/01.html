@@ -6,6 +6,10 @@
     <title>인라인 이벤트 모델 1</title>
     <script>
         window.onload = function() {
+            let a1 = document.getElementById("a1");
+            a1.onclick = function(){
+                return false; // a 태그의 디폴트 이벤트 제거
+            }
             // 1초마다 익명함수 호출
             setInterval(function() {
                 let image = document.getElementById("intervalImage");
@@ -64,6 +68,7 @@
     <button onclick="addstar(this)">별 추가</button><br><br>
     <button onmouseover="btnMouseOver(this)" onmouseout="btnMouseOut(this)">배경 및 글자색 변경</button><br><br>
     <img src="./imgs/coin1.jpg" alt="배경 이미지" width="400px" height="300px" onclick="imageChange(this)"><br><br>
-    <img src="./imgs/coin1.jpg" alt="배경 이미지" width="400px" height="300px" id="intervalImage">
+    <img src="./imgs/coin1.jpg" alt="배경 이미지" width="400px" height="300px" id="intervalImage"><br><br>
+    <a href="https://www.naver.com/" id="a1">디폴트 이벤트 제거</a>
 </body>
 </html>
