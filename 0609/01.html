@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인라인 이벤트 모델 1</title>
     <script>
+        window.onload = function() {
+            // 1초마다 익명함수 호출
+            setInterval(function() {
+                let image = document.getElementById("intervalImage");
+                imageChange(image);
+            }, 1000)
+        }
+
         function greet() {
             alert('안녕하세요~ 인라인 이벤트 모델 2');
         }
@@ -12,11 +20,50 @@
         function addstar(btn) {
             btn.textContent += "★";
         }
+
+        function btnMouseOver(btn) {
+            btn.style.backgroundColor = "blue";
+            btn.style.color = "red";
+        }
+
+        function btnMouseOut(btn) {
+            btn.style.backgroundColor = "red";
+            btn.style.color = "blue";
+        }
+
+        function imageChange(image) {
+            // if (image.src == "file:///D:/WebProjects/0609/imgs/coin5.jpg") {
+            //     image.src = "./imgs/coin1.jpg";
+            // } else if (image.src == "file:///D:/WebProjects/0609/imgs/coin1.jpg") {
+            //     image.src = "./imgs/coin2.jpg";
+            // } else if (image.src == "file:///D:/WebProjects/0609/imgs/coin2.jpg") {
+            //     image.src = "./imgs/coin3.jpg";
+            // } else if (image.src == "file:///D:/WebProjects/0609/imgs/coin3.jpg") {
+            //     image.src = "./imgs/coin4.jpg";
+            // } else if (image.src == "file:///D:/WebProjects/0609/imgs/coin4.jpg") {
+            //     image.src = "./imgs/coin5.jpg"
+            // }
+
+            if (image.src.split('/').at(-1) === "coin5.jpg") {
+                image.src = "./imgs/coin1.jpg";
+            } else if (image.src.split('/').at(-1) === "coin1.jpg") {
+                image.src = "./imgs/coin2.jpg";
+            } else if (image.src.split('/').at(-1) === "coin2.jpg") {
+                image.src = "./imgs/coin3.jpg";
+            } else if (image.src.split('/').at(-1) === "coin3.jpg") {
+                image.src = "./imgs/coin4.jpg";
+            } else if (image.src.split('/').at(-1) === "coin4.jpg") {
+                image.src = "./imgs/coin5.jpg"
+            }
+        }
     </script>
 </head>
 <body>
     <button onclick="alert('인라인 이벤트 모델 1')">인라인 이벤트 모델 1</button><br><br>
     <button onclick="greet()">인라인 이벤트 모델 2</button><br><br>
-    <button onclick="addstar(this)">별 추가</button>
+    <button onclick="addstar(this)">별 추가</button><br><br>
+    <button onmouseover="btnMouseOver(this)" onmouseout="btnMouseOut(this)">배경 및 글자색 변경</button><br><br>
+    <img src="./imgs/coin1.jpg" alt="배경 이미지" width="400px" height="300px" onclick="imageChange(this)"><br><br>
+    <img src="./imgs/coin1.jpg" alt="배경 이미지" width="400px" height="300px" id="intervalImage">
 </body>
 </html>
