@@ -23,6 +23,11 @@
                     mouseleave : function() {
                         $(this).css("background", "orange");
                     },
+                });
+
+                $("a").on("click", function(event){
+                    alert("링크가 클릭되었습니다.");
+                    event.preventDefault();
                 })
             }
         );
@@ -30,5 +35,6 @@
 </head>
 <body>
     <h1 id="box"></h1>
+    <a href="https://www.naver.com/">Naver Homepage</a>
 </body>
 </html>
